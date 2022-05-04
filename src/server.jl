@@ -120,7 +120,8 @@ function run(srvr::gRPCServer)
 
             # TODO: keep channel reference in server
             channel = gRPCChannel(connection)
-            @async process(controller, srvr, channel)
+            #@async process(controller, srvr, channel)
+            process(controller, srvr, channel)
         end
     catch ex
         @warn("server stopped with exception", ex)
